@@ -1,0 +1,13 @@
+<button mat-button [matMenuTriggerFor]="menu">
+   <mat-icon aria-hidden="false" aria-label="Menu principal">
+      menu
+   </mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <a [routerLink]="['/responsavel']" mat-menu-item>Responsavel</a>
+  <a [routerLink]="['/cuidador']" mat-menu-item>Cuidador</a>
+  <a [routerLink]="['/idoso']" mat-menu-item>Idoso</a>
+  <a [routerLink]="['/horario']" mat-menu-item>Horario</a>
+  <a [routerLink]="['/medicamento']" mat-menu-item>Medicamento</a>
+  <a [routerLink]="['/confirmarAcao']" mat-menu-item>Confirmar Ação</a>
+</mat-menu>

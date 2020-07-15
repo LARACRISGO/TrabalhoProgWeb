@@ -1,0 +1,40 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+    <mat-form-field>
+        <mat-select placeholder="Selecione o cuidador" required [(ngModel)]="confirmarAcao.cuidador" name="cuidador">
+            <mat-option *ngFor="let cuidador of cuidadores" [value]="cuidador._id">
+               Cuidador: {{ cuidador.nome }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="Selecione o medicamento" required [(ngModel)]="confirmarAcao.medicamento" name="medicamento">
+            <mat-option *ngFor="let medicamento of medicamentos" [value]="medicamento._id">
+                Medicamento: {{ medicamento.nome }} - Data e hora do medicamento: {{ medicamento.horario }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="Selecione o correpondente" required [(ngModel)]="confirmarAcao.horario" name="horario">
+            <mat-option *ngFor="let horario of horarios" [value]="horario._id">
+                Tipo: {{ horario.tipo }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <mat-toolbar class="form-buttons">
+        <mat-toolbar-row>
+            <button mat-raised-button type="submit" color="accent">
+                Salvar
+            </button>
+            <button mat-raised-button type="button" (click)="voltar(f)">
+                Voltar
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>

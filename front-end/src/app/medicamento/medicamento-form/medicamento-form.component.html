@@ -1,0 +1,32 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+    <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="medicamento.nome" name="nome" required placeholder="Informe o nome do medicamento">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Dosagem</mat-label>
+        <input matInput [(ngModel)]="medicamento.dosagem" name="dosagem" required placeholder="Informe a dosagem do medicamento">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Horário</mat-label>
+        <input matInput [(ngModel)]="medicamento.horario" name="horario" required placeholder="Informe o horário do medicamento">
+    </mat-form-field>
+
+
+   <mat-toolbar class="form-buttons">
+        <mat-toolbar-row>
+            <button mat-raised-button type="submit" color="accent">
+                Salvar
+            </button>
+            <button mat-raised-button type="button" (click)="voltar(f)">
+                Voltar
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>
+   

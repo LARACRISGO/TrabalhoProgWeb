@@ -1,0 +1,58 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+    <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="cuidador.nome" name="nome" required placeholder="Informe o nome do cuidador">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Rg</mat-label>
+        <input matInput [(ngModel)]="cuidador.rg" name="rg" required placeholder="Informe o RG do cuidador">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Cpf</mat-label>
+        <input matInput [(ngModel)]="cuidador.cpf" name="cpf" required placeholder="Informe o CPF do cuidador" mask="000.000.000-00">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Data de nascimento</mat-label>
+        <input matInput [(ngModel)]="cuidador.data_nascimento" name="data_nascimento" required placeholder="Informe a data de nascimento">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Endereço</mat-label>
+        <textarea matInput [(ngModel)]="cuidador.endereco" name="endereco" required placeholder="Informe a endereço do cuidador" rows="4">
+            </textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Estado Civil</mat-label>
+        <input matInput [(ngModel)]="cuidador.estado_civil" name="estado_civil" required placeholder="Informe o estado civil do cuidador">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <mat-icon matPrefix>contact_mail</mat-icon>
+        <input type="email" matInput [(ngModel)]="cuidador.email" name="email" required placeholder="Informe o e-mail do cuidador">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Telefone</mat-label>
+        <mat-icon matPrefix>contact_phone</mat-icon>
+        <input matInput [(ngModel)]="cuidador.telefone" name="telefone" required placeholder="Informe o telefone de contato">
+    </mat-form-field>
+
+    <mat-toolbar class="form-buttons">
+        <mat-toolbar-row>
+            <button mat-raised-button type="submit" color="accent">
+                Salvar
+            </button>
+            <button mat-raised-button type="button" (click)="voltar(f)">
+                Voltar
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>

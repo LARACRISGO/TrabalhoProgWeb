@@ -1,0 +1,40 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+    <mat-form-field>
+        <mat-select placeholder="Selecione o idoso" required [(ngModel)]="horario.idoso" name="idoso">
+            <mat-option *ngFor="let idoso of idosos" [value]="idoso._id">
+               Idoso: {{ idoso.nome }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Tipo</mat-label>
+        <input matInput [(ngModel)]="horario.tipo" name="tipo" required placeholder="Informe o tipo de alerta">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Quantidade</mat-label>
+        <input matInput [(ngModel)]="horario.quantidade" name="quantidade" required placeholder="Informe a quantidade de alertas">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Horário</mat-label>
+        <input matInput [(ngModel)]="horario.horario" name="horario" required placeholder="Informe o horário do alerta">
+    </mat-form-field>
+
+
+   <mat-toolbar class="form-buttons">
+        <mat-toolbar-row>
+            <button mat-raised-button type="submit" color="accent">
+                Salvar
+            </button>
+            <button mat-raised-button type="button" (click)="voltar(f)">
+                Voltar
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>
+   

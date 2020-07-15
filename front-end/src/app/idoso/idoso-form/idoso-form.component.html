@@ -1,0 +1,73 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+    <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="idoso.nome" name="nome" required placeholder="Informe o nome do Idoso">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Data de nascimento</mat-label>
+        <input matInput [(ngModel)]="idoso.data_nascimento" name="data_nascimento" required placeholder="Informe a data de nascimento">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Cpf</mat-label>
+        <input matInput [(ngModel)]="idoso.cpf" name="cpf" required placeholder="Informe o CPF do idoso" mask="000.000.000-00">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Rg</mat-label>
+        <input matInput [(ngModel)]="idoso.rg" name="rg" required placeholder="Informe o RG do idoso">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Endereço</mat-label>
+        <textarea matInput [(ngModel)]="idoso.endereco" name="endereco" required placeholder="Informe a endereço do idoso" rows="4">
+            </textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Estado Civil</mat-label>
+        <input matInput [(ngModel)]="idoso.estado_civil" name="estado_civil" required placeholder="Informe o estado civil do idoso">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Peso</mat-label>
+        <input matInput [(ngModel)]="idoso.peso" name="peso" required placeholder="Informe o peso do idoso">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Altura</mat-label>
+        <input matInput [(ngModel)]="idoso.altura" name="altura" required placeholder="Informe a altura do idoso">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Telefone de Emergência</mat-label>
+        <mat-icon matPrefix>contact_phone</mat-icon>
+        <input matInput [(ngModel)]="idoso.telefone_emergencia" name="telefone_emergencia" required placeholder="Informe o telefone de contato em caso de emergência com o idoso">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Enfermidades</mat-label>
+        <input matInput [(ngModel)]="idoso.enfermidades" name="enfermidades" required placeholder="Informe as enfermidades do idoso">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Alergia á Medicamentos</mat-label>
+        <input matInput [(ngModel)]="idoso.alergia_medicamento" name="alergia_medicamento" required placeholder="Informe se o idoso possui alergia a algum medicamento. Em caso positivo, informe qual medicamento">
+    </mat-form-field>
+   
+   <mat-toolbar class="form-buttons">
+        <mat-toolbar-row>
+            <button mat-raised-button type="submit" color="accent">
+                Salvar
+            </button>
+            <button mat-raised-button type="button" (click)="voltar(f)">
+                Voltar
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>
+   

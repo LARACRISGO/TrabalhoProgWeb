@@ -1,0 +1,65 @@
+<h1>Listagem de responsáveis</h1>
+
+<div class="new-item-button-container">
+  <a mat-raised-button color="accent" [routerLink]="['/responsavel/novo']">
+    <mat-icon>add_box</mat-icon>Cadastrar novo responsavel
+  </a>
+</div>
+
+<table mat-table [dataSource]="responsaveis" class="mat-elevation-z4">
+
+   <!-- nome Column -->
+   <ng-container matColumnDef="nome">
+     <th mat-header-cell *matHeaderCellDef> Nome do responsavel </th>
+     <td mat-cell *matCellDef="let responsavel"> {{responsavel.nome}} </td>
+   </ng-container>
+ 
+  <!-- cpf Column -->
+  <ng-container matColumnDef="cpf">
+    <th mat-header-cell *matHeaderCellDef> Cpf </th>
+    <td mat-cell *matCellDef="let responsavel"> {{responsavel.cpf}} </td>
+  </ng-container>
+
+  <!-- endereco Column -->
+  <ng-container matColumnDef="endereco">
+    <th mat-header-cell *matHeaderCellDef> Endereco </th>
+    <td mat-cell *matCellDef="let responsavel"> {{responsavel.endereco}} </td>
+  </ng-container>
+
+  <!-- telefone Column -->
+  <ng-container matColumnDef="telefone">
+    <th mat-header-cell *matHeaderCellDef> Telefone </th>
+    <td mat-cell *matCellDef="let responsavel"> {{responsavel.telefone}} </td>
+    </ng-container>
+
+    <!-- email Column -->
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> E-mail </th>
+        <td mat-cell *matCellDef="let responsavel"> {{responsavel.email}} </td>
+    </ng-container>
+
+   <!-- editar Column -->
+   <ng-container matColumnDef="editar">
+    <th mat-header-cell *matHeaderCellDef> Editar </th>
+    <td mat-cell *matCellDef="let responsavel">
+        <a mat-raised-button color="accent" title="Editar"
+          [routerLink]="['/responsavel', responsavel._id]">
+          <mat-icon>edit</mat-icon>
+        </a> 
+    </td>
+  </ng-container>
+
+  <!-- excluir Column -->
+  <ng-container matColumnDef="excluir">
+    <th mat-header-cell *matHeaderCellDef> Excluir </th>
+    <td mat-cell *matCellDef="let responsavel">
+        <button mat-raised-button color="warn" title="Excluir"
+          (click)="excluirItem(responsavel._id)">
+          <mat-icon>delete_forever</mat-icon>
+        </button> 
+    </td>
+  </ng-container>
+ 
+   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+ </table>
